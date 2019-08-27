@@ -21,19 +21,19 @@
     
     
     <meta name="keywords" content="Java">
-    <meta name="description" content="显示文件行数，点击可以跳转。需要在application.properties中配置 12# log configlogging.config=classpath:logback.xml  logback.xml文件内容如下 1234567891011121314151617181920212223242526272829&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8">
+    <meta name="description" content="SpringBoot中使用的是面向日志框架是slf4j，使用的日志框架应该是logback。因此可以直接在SpringBoot中使用。 1private final static org.slf4j.Logger logger = org.slf4j.LogFactory.getLogger(ClassName.class);  没有配置文件，直接去使用虽然没有太大问题问题，但是如果要详细配置输出">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Logback框架的配置文件">
 <meta property="og:url" content="http://houxiaoyi.cn/2019/08/19/Logback框架的配置文件/index.html">
 <meta property="og:site_name" content="戎码一生">
-<meta property="og:description" content="显示文件行数，点击可以跳转。需要在application.properties中配置 12# log configlogging.config=classpath:logback.xml  logback.xml文件内容如下 1234567891011121314151617181920212223242526272829&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8">
+<meta property="og:description" content="SpringBoot中使用的是面向日志框架是slf4j，使用的日志框架应该是logback。因此可以直接在SpringBoot中使用。 1private final static org.slf4j.Logger logger = org.slf4j.LogFactory.getLogger(ClassName.class);  没有配置文件，直接去使用虽然没有太大问题问题，但是如果要详细配置输出">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9710002-333e4bc951ee506f.png">
-<meta property="og:updated_time" content="2019-08-19T14:26:46.158Z">
+<meta property="og:updated_time" content="2019-08-27T02:51:44.352Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Logback框架的配置文件">
-<meta name="twitter:description" content="显示文件行数，点击可以跳转。需要在application.properties中配置 12# log configlogging.config=classpath:logback.xml  logback.xml文件内容如下 1234567891011121314151617181920212223242526272829&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8">
+<meta name="twitter:description" content="SpringBoot中使用的是面向日志框架是slf4j，使用的日志框架应该是logback。因此可以直接在SpringBoot中使用。 1private final static org.slf4j.Logger logger = org.slf4j.LogFactory.getLogger(ClassName.class);  没有配置文件，直接去使用虽然没有太大问题问题，但是如果要详细配置输出">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9710002-333e4bc951ee506f.png">
     
         <link rel="alternate" type="application/atom+xml" title="戎码一生" href="/atom.xml">
@@ -164,6 +164,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#logback详细配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">logback详细配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#eclipse版本的SpringBoot的内置logback配置"><span class="post-toc-number"></span> <span class="post-toc-text">eclipse版本的SpringBoot的内置logback配置</span></a>
+        </nav>
+    </aside>
+
 
 <article id="[layout]-Logback框架的配置文件"
   class="post-article article-type-[layout] fade" itemprop="blogPost">
@@ -184,7 +191,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>显示文件行数，点击可以跳转。<br>需要在application.properties中配置</p>
+            <p>SpringBoot中使用的是面向日志框架是slf4j，使用的日志框架应该是logback。因此可以直接在SpringBoot中使用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> org.slf4j.Logger logger = org.slf4j.LogFactory.getLogger(ClassName.class);</span><br></pre></td></tr></table></figure>
+
+<p>没有配置文件，直接去使用虽然没有太大问题问题，但是如果要详细配置输出文件，以及日志等级，可能就需要详细的设计了。</p>
+<h3 id="logback详细配置"><a href="#logback详细配置" class="headerlink" title="logback详细配置"></a>logback详细配置</h3><p>显示文件行数，点击可以跳转。<br>需要在application.properties中配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># log config</span><br><span class="line">logging.config=classpath:logback.xml</span><br></pre></td></tr></table></figure>
 
 <p>logback.xml文件内容如下</p>
@@ -199,6 +210,9 @@
                 <div class="image-caption">logback.png</div>
             </figure>
 
+<h2 id="eclipse版本的SpringBoot的内置logback配置"><a href="#eclipse版本的SpringBoot的内置logback配置" class="headerlink" title="eclipse版本的SpringBoot的内置logback配置"></a>eclipse版本的SpringBoot的内置logback配置</h2><p>由于eclipse的console并不能输出各种彩色，只能输出蓝色，红色以及黑色。<br>因此基于idea版本去掉了特殊颜色设置。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span> <span class="attr">debug</span>=<span class="string">"false"</span> <span class="attr">scan</span>=<span class="string">"true"</span> <span class="attr">scanPeriod</span>=<span class="string">"1 seconds"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">contextName</span>&gt;</span>logback<span class="tag">&lt;/<span class="name">contextName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"log.path"</span> <span class="attr">value</span>=<span class="string">"/tmp/applogs/xxl-job/xxl-job-executor-sample-springboot.log"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"console"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.ConsoleAppender"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d&#123;HH:mm:ss.SSS&#125; %contextName [%thread] %-5level at %class.%method \(%file:%line\)  - %msg%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"file"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.RollingFileAppender"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">file</span>&gt;</span>$&#123;log.path&#125;<span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rollingPolicy</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.rolling.TimeBasedRollingPolicy"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">fileNamePattern</span>&gt;</span>$&#123;log.path&#125;.%d&#123;yyyy-MM-dd&#125;.zip<span class="tag">&lt;/<span class="name">fileNamePattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rollingPolicy</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%date %level [%thread] %logger&#123;36&#125; [%file : %line] %msg%n</span><br><span class="line">            <span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">"debug"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"console"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"file"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>参考：<a href="https://logback.qos.ch/manual/layouts.html" target="_blank" rel="noopener">https://logback.qos.ch/manual/layouts.html</a></p>
 
         </div>
@@ -208,7 +222,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-08-19T14:26:46.158Z" itemprop="dateUpdated">2019-08-19 22:26:46</time>
+    Last updated: <time datetime="2019-08-27T02:51:44.352Z" itemprop="dateUpdated">2019-08-27 10:51:44</time>
 </span><br>
 
 
@@ -289,7 +303,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/08/22/Java-泛型/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Java 泛型</h4>
+      </a>
+    </div>
   
 
   

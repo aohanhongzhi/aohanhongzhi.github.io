@@ -158,6 +158,52 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="[layout]-Java-泛型"
+  class="article-card article-type-[layout]" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-08-22 20:58:58" datetime="2019-08-22T12:58:58.000Z"  itemprop="datePublished">2019-08-22</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/08/22/Java-泛型/">Java 泛型</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Java 泛型简单点就是一个占位符，这个型是任意的，所以就是叫做泛型，也就是&lt;AnyWord&gt; 尖括号里面的字符是任意的，但是在上下文中应该是一致的，它标识统一类型，至于是什么类型，后期使用者自己觉得，所以重复一遍，泛型可以简单理解为占位符。
+123456789101112131415161718192021222324252627282930313233343536373839...
+    
+
+        <a href="/2019/08/22/Java-泛型/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="[layout]-Logback框架的配置文件"
   class="article-card article-type-[layout]" itemprop="blogPost">
 
@@ -184,11 +230,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        显示文件行数，点击可以跳转。需要在application.properties中配置
-12# log configlogging.config=classpath:logback.xml
+        SpringBoot中使用的是面向日志框架是slf4j，使用的日志框架应该是logback。因此可以直接在SpringBoot中使用。
+1private final static org.slf4j.Logger logger = org.slf4j.LogFactory.getLogger(ClassName.class);
 
-logback.xml文件内容如下
-1234567891011121314151617181920212223242526272829&lt;?xml version="1.0" encoding="UT...
+没有配置文件，直接去使用虽然没有太大问题问题，但是如果要详细配...
     
 
         <a href="/2019/08/19/Logback框架的配置文件/" class="post-more waves-effect waves-button">
